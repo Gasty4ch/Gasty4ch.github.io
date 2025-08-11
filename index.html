@@ -1,0 +1,279 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZXC ТВАРИ - Легендарная Гильдия DOTA 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="glow-text">ZXC</span> ТВАРИ
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Главная</a></li>
+                <li><a href="#about" class="nav-link">О нас</a></li>
+                <li><a href="#achievements" class="nav-link">Достижения</a></li>
+                <li><a href="#members" class="nav-link">Состав</a></li>
+                <li><a href="#join" class="nav-link">Вступить</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">ЛЕГЕНДАРНАЯ</span>
+                <span class="title-main">ZXC ТВАРИ</span>
+                <span class="title-sub">Гильдия №1 в DOTA 2</span>
+            </h1>
+            <p class="hero-description">
+                Мы не просто играем - мы доминируем. Присоединяйся к элите.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('join')">
+                    <i class="fas fa-rocket"></i>
+                    Вступить в гильдию
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('achievements')">
+                    <i class="fas fa-trophy"></i>
+                    Наши достижения
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="card-content">
+                    <i class="fas fa-crown"></i>
+                    <span>Rank #1</span>
+                </div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-content">
+                    <i class="fas fa-fire"></i>
+                    <span>100% Winrate</span>
+                </div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="card-content">
+                    <i class="fas fa-star"></i>
+                    <span>Immortal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-accent">Почему мы</span>
+                лучшие?
+            </h2>
+            <div class="about-grid">
+                <div class="about-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Элитный состав</h3>
+                    <p>Только топ-1% игроков со всего СНГ. Каждый член гильдии - это машина для руина.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Доминация</h3>
+                    <p>Мы - самое токсичное комьюнити в DOTA 2</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Эксклюзивные награды</h3>
+                    <p>Уникальные скины, эмблемы и достижения доступны только членам ZXC ТВАРИ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-accent">Наши</span>
+                достижения
+            </h2>
+            <div class="achievements-grid">
+                <div class="achievement-card" data-aos="zoom-in">
+                    <div class="achievement-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Девственность</h3>
+                        <p class="achievement-place">Эксклюзивный статус</p>
+                        <p class="achievement-desc">Наша гильдия лучшая в этой отрасли</p>
+                    </div>
+                    <div class="achievement-glow"></div>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="achievement-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Наша суть</h3>
+                        <p class="achievement-place">Философия</p>
+                        <p class="achievement-desc">Наша суть это ZXC, а ZXC - наша суть</p>
+                    </div>
+                    <div class="achievement-glow"></div>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="achievement-icon">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Твари</h3>
+                        <p class="achievement-place">Профессионалы</p>
+                        <p class="achievement-desc">Все наши участники проффесиональные твари и отбросы общества</p>
+                    </div>
+                    <div class="achievement-glow"></div>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="achievement-icon">
+                        <i class="fas fa-bomb"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Руин</h3>
+                        <p class="achievement-place">ТОП 1</p>
+                        <p class="achievement-desc">Наша гильдия ТОП 1 по руину во всём СНГ</p>
+                    </div>
+                    <div class="achievement-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="members" class="members">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-accent">Наша</span>
+                команда
+            </h2>
+            <div class="members-grid">
+                <div class="member-card" data-aos="flip-left">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150/ff69b4/ffffff?text=Gasty" alt="Gasty">
+                        <div class="member-rank">Гл. Тварь</div>
+                    </div>
+                    <h3>Gasty</h3>
+                    <p class="member-role">Mid Lane</p>
+                    <p class="member-stats">19K MMR • 63% Winrate</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-steam"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="member-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150/ff1493/ffffff?text=Aerk" alt="Aerkarag">
+                        <div class="member-rank">БОГ ТВАРЕЙ</div>
+                    </div>
+                    <h3>Aerkarag</h3>
+                    <p class="member-role">Carry</p>
+                    <p class="member-stats">19.5K MMR • 64% Winrate</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-steam"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="member-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150/ffc0cb/000000?text=Серёжа" alt="Серёжа дед инсайд">
+                        <div class="member-rank">Тварь</div>
+                    </div>
+                    <h3>Серёжа дед инсайд</h3>
+                    <p class="member-role">Support</p>
+                    <p class="member-stats">1.5K MMR • 48% Winrate</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-steam"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="join">
+        <div class="container">
+            <div class="join-content">
+                <h2 class="section-title">
+                    <span class="title-accent">Готов стать</span>
+                    легендой?
+                </h2>
+                <p class="join-description">
+                    Присоединяйся к ZXC ТВАРИ и стань частью истории DOTA 2. 
+                    Мы ищем только лучших из лучших.
+                </p>
+                <div class="join-requirements">
+                    <h3>Требования:</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Минимум 6K MMR</li>
+                        <li><i class="fas fa-check"></i> 1000+ часов в DOTA 2</li>
+                        <li><i class="fas fa-check"></i> Готовность к тренировкам</li>
+                        <li><i class="fas fa-check"></i> Командный игрок</li>
+                        <li><i class="fas fa-check"></i> Минимум 1 психическое отклонение</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary btn-large" onclick="openApplication()">
+                    <i class="fas fa-plus"></i>
+                    Подать заявку
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="glow-text">ZXC</span> ТВАРИ
+                </div>
+                <p class="footer-text">
+                    © 2024 ZXC ТВАРИ. Все права защищены. 
+                    Лучшая гильдия DOTA 2 в мире.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-steam"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Подать заявку в ZXC ТВАРИ</h2>
+            <form id="application-form">
+                <input type="text" placeholder="Steam никнейм" required>
+                <input type="text" placeholder="MMR" required>
+                <input type="text" placeholder="Любимая позиция" required>
+                <textarea placeholder="Расскажи о себе" rows="4" required></textarea>
+                <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
