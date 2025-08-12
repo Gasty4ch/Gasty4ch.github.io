@@ -21,7 +21,7 @@ async function loadAudio() {
 
     try {
         // Fetch the audio file
-        const response = await fetch('lexa.mp3');
+        const response = await fetch(lexa.mp3);
         const arrayBuffer = await response.arrayBuffer();
         // Decode the audio data into an AudioBuffer
         buffer = await audioContext.decodeAudioData(arrayBuffer);

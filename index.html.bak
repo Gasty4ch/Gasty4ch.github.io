@@ -18,7 +18,7 @@
 
         <main>
             <div class="image-wrapper fade-in delay-2">
-                <img src="lexa.jpg" alt="Портрет Алексея Алексеевича">
+                <img src="/lexa.jpg" alt="Портрет Алексея Алексеевича">
             </div>
             <p class="intro-text fade-in delay-3">
                 Посвящается нашему выдающемуся преподавателю, который навсегда оставил след в сердцах студентов группы 1ОСАТ9-16.

@@ -1,0 +1,251 @@
+:root {
+    --image-visualizer-scale: 1;
+    --image-visualizer-shadow-spread: 30px; /* Default value for non-visualizing state */
+    --image-visualizer-shadow-opacity: 1.0; /* Default value for non-visualizing state */
+    --image-visualizer-rotate: 0deg; /* New: Default rotation for visualization */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Slightly more pronounced initial move */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* Changed background to a radial gradient for a deeper, more ethereal feel */
+    background: radial-gradient(circle at center, #1A1A2E 0%, #0F0F1A 70%, #05050A 100%);
+    color: #E0E0E0; /* Light grey */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrollbar on small screens */
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 1100px; /* Bigger container */
+    padding: 60px; /* More padding */
+    background: rgba(26, 26, 46, 0.85); /* Slightly less transparent */
+    border-radius: 20px; /* Slightly more rounded */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    backdrop-filter: blur(8px); /* More blur */
+    border: 1px solid rgba(138, 43, 226, 0.4); /* Slightly more visible border */
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.8em; /* Bigger font */
+    color: #E0E0E0;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(138, 43, 226, 0.8), 0 0 30px rgba(138, 43, 226, 0.4); /* More glow */
+    background: linear-gradient(45deg, #FFD700, #8A2BE2, #ADD8E6); /* Gold, Blue Violet, Light Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    background-size: 200% auto; /* For gradient animation */
+    animation: gradientShift 5s ease-in-out infinite alternate; /* Subtle gradient animation */
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em; /* Bigger font */
+    color: #C0C0C0;
+    margin-top: 0;
+    margin-bottom: 40px; /* More spacing */
+    letter-spacing: 1px; /* Subtle spacing */
+}
+
+.image-wrapper {
+    width: 300px; /* Bigger image */
+    height: 300px; /* Bigger image */
+    margin: 0 auto 50px auto; /* More spacing */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid rgba(138, 43, 226, 0.7); /* Thicker, more visible border */
+    box-shadow: 0 0 var(--image-visualizer-shadow-spread) rgba(138, 43, 226, var(--image-visualizer-shadow-opacity)), inset 0 0 15px rgba(138, 43, 226, 0.7); /* Use variables for dynamic shadow */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    cursor: pointer; /* Indicate clickable */
+}
+
+/* Specific styles for when audio visualization is active */
+.image-wrapper.visualizing {
+    transition: none; /* Disable smooth transition for real-time visualization */
+    transform: scale(var(--image-visualizer-scale)) rotate(var(--image-visualizer-rotate)); /* Apply dynamic scale and rotate */
+    box-shadow: 0 0 var(--image-visualizer-shadow-spread) rgba(138, 43, 226, var(--image-visualizer-shadow-opacity)), inset 0 0 15px rgba(138, 43, 226, 0.7);
+}
+
+.image-wrapper:not(.visualizing):hover {
+    transform: scale(1.08) rotate(2deg); /* Apply original hover only when not visualizing */
+    box-shadow: 0 0 50px rgba(138, 43, 226, 1.2), inset 0 0 20px rgba(138, 43, 226, 1.0);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.intro-text, .closing-text {
+    font-size: 1.25em; /* Bigger font */
+    line-height: 1.7; /* Better readability */
+    margin-bottom: 40px; /* More spacing */
+    color: #D0D0D0;
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.phrases {
+    margin: 60px 0; /* More spacing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* More gap */
+}
+
+.phrase {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3em; /* Bigger font */
+    font-weight: 600;
+    color: #8A2BE2; /* Blue Violet */
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.9), 0 0 25px rgba(138, 43, 226, 0.5); /* More glow */
+    margin: 0;
+    padding: 15px 30px; /* More padding */
+    border: 3px solid rgba(138, 43, 226, 0.6); /* Thicker border */
+    border-radius: 10px; /* More rounded */
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly darker background */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(138, 43, 226, 0.3); /* Deeper shadow */
+    transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: default; /* Indicate not clickable */
+}
+
+.phrase:hover {
+    background-color: rgba(138, 43, 226, 0.3);
+    transform: translateY(-8px) scale(1.02); /* More dynamic hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+footer {
+    margin-top: 70px; /* More spacing */
+    font-size: 1em; /* Slightly bigger font */
+    color: #A0A0A0;
+    letter-spacing: 0.5px;
+}
+
+/* Animation Delays */
+.fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+    opacity: 0; /* Start invisible */
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+.delay-4 { animation-delay: 1.2s; }
+.delay-5 { animation-delay: 1.5s; }
+.delay-6 { animation-delay: 1.8s; }
+.delay-7 { animation-delay: 2.1s; }
+.delay-8 { animation-delay: 2.4s; }
+.delay-9 { animation-delay: 2.7s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px; /* Adjusted for smaller screens */
+        margin: 20px;
+        max-width: 90%; /* Allow it to take more width */
+    }
+
+    h1 {
+        font-size: 3.5em; /* Scaled down */
+    }
+
+    .subtitle {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+
+    .image-wrapper {
+        width: 250px; /* Scaled down */
+        height: 250px; /* Scaled down */
+        margin-bottom: 40px;
+    }
+
+    .intro-text, .closing-text {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+
+    .phrases {
+        flex-direction: row; /* Keep as row if possible, otherwise wrap */
+        gap: 20px;
+        margin: 40px 0;
+    }
+
+    .phrase {
+        font-size: 2.2em; /* Scaled down */
+        padding: 10px 20px;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .intro-text, .closing-text {
+        font-size: 0.95em;
+    }
+
+    .phrase {
+        font-size: 1.8em;
+        padding: 8px 15px;
+    }
+}
